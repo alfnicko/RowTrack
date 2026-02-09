@@ -1,0 +1,248 @@
+:root {
+    /* Rowing-related palette */
+    --ocean-blue: #1a6fbf;
+    --regatta-red: #e63946;
+    --wave-teal: #2a9d8f;
+    --sand: #f4f1de;
+    --deep-water: #1d3557;
+    --mist: #f1faee;
+
+    /* Spacing */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    /* Other */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+  }
+
+  /*  BASE STYLES  */
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--deep-water);
+    background-color: var(--mist);
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    color: var(--deep-water);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--ocean-blue), var(--wave-teal));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: var(--space-md);
+  }
+
+  /*  LAYOUT COMPONENTS  */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+  }
+
+  .card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-top: 4px solid var(--ocean-blue);
+    transition: var(--transition);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  /*  NAVIGATION & HEADER  */
+  .app-header {
+    background: var(--deep-water);
+    color: white;
+    padding: var(--space-md) 0;
+    margin-bottom: var(--space-xl);
+  }
+
+  .app-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .logo span {
+    color: var(--regatta-red);
+  }
+
+  /*  BUTTONS  */
+  .btn {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background-color: var(--ocean-blue);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--deep-water);
+    transform: translateY(-2px);
+  }
+
+  .btn-danger {
+    background-color: var(--regatta-red);
+    color: white;
+  }
+
+  .btn-outline {
+    border: 2px solid var(--ocean-blue);
+    color: var(--ocean-blue);
+    background: transparent;
+  }
+
+  /*  FORM ELEMENTS  */
+  .form-group {
+    margin-bottom: var(--space-md);
+  }
+
+  .form-control {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 2px solid var(--deck-sand);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: var(--ocean-blue);
+    box-shadow: 0 0 0 3px rgba(26, 111, 191, 0.2);
+  }
+
+  /*  DASHBOARD ELEMENTS  */
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .stats-box {
+    background: linear-gradient(135deg, var(--ocean-blue), var(--wave-teal));
+    color: white;
+    padding: var(--space-md);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+  }
+
+  .stats-box h3 {
+    color: white;
+    margin-bottom: var(--space-sm);
+  }
+
+  .stats-box p {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  /*  TRAINING TABLE  */
+  .training-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-md) 0;
+  }
+
+  .training-table th {
+    background-color: var(--ocean-blue);
+    color: white;
+    padding: var(--space-sm);
+    text-align: left;
+  }
+
+  .training-table td {
+    padding: var(--space-sm);
+    border-bottom: 1px solid var(--deck-sand);
+  }
+
+  .training-table tr:nth-child(even) {
+    background-color: var(--mist);
+  }
+
+  /*  NAVIGATION COMPONENTS  */
+  .action-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0;
+  }
+
+  .action-link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    background-color: white;
+    color: var(--ocean-blue);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 2px solid var(--deck-sand);
+  }
+
+  .action-link:hover {
+    background-color: var(--ocean-blue);
+    color: white;
+    transform: translateY(-2px);
+    border-color: var(--ocean-blue);
+  }
+
+  .action-link i {
+    margin-right: 8px;
+    font-size: 1.1em;
+  }
+
+  .action-link.logout {
+    color: var(--regatta-red);
+    border-color: rgba(230, 57, 70, 0.2);
+  }
+
+  .action-link.logout:hover {
+    background-color: var(--regatta-red);
+    color: white;
+  }
+
+  .action-link.create {
+    background-color: var(--wave-teal);
+    color: white;
+    border: none;
+  }
+
+  .action-link.create:hover {
+    background-color: var(--deep-water);
+  }
+
